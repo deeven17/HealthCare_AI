@@ -7,9 +7,9 @@ import plotly.express as px
 import streamlit as st
 load_dotenv()
 
-API_KEY = os.getenv("API_KEY")
-WML_URL = os.getenv("WML_URL")
-PROJECT_ID = os.getenv("PROJECT_ID")
+API_KEY = os.getenv("API_KEY") or st.secrets("API_KEY") 
+WML_URL = os.getenv("WML_URL") or st.secrets("WML_URL")
+PROJECT_ID = os.getenv("PROJECT_ID") or st.secrets("PROJECT_ID")
 
 def call_granite(prompt):
     token_url = "https://iam.cloud.ibm.com/identity/token"
