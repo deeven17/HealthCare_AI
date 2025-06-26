@@ -28,7 +28,7 @@ def call_granite(prompt):
     print("✅ Access token received")
     print("🚀 Sending prompt to Granite model...")
 
-    model_id = "ibm/granite-13b-instruct-v2"
+    model_id = "ibm/granite-3-2b-instruct"
     inference_url = f"{WML_URL}/ml/v1/text/generation?version=2024-05-01"
 
     payload = {
@@ -36,10 +36,7 @@ def call_granite(prompt):
         "input": prompt,
        
         "parameters": {
-            "decoding_method": "greedy",   
-            "temperature": 0.7,              
-            "top_k": 50,                     
-            "top_p": 0.95,              
+            "decoding_method": "greedy",               
             "max_new_tokens": 500         
         },
         "project_id": PROJECT_ID  
